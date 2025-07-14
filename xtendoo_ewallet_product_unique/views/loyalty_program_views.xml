@@ -1,0 +1,17 @@
+
+<odoo>
+    <data>
+        <record id="loyalty_program_view_form_inherit" model="ir.ui.view">
+            <field name="name">loyalty.program.form.inherit.ewallet</field>
+            <field name="model">loyalty.program</field>
+            <field name="inherit_id" ref="loyalty.loyalty_program_gift_ewallet_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='trigger_product_ids']" position="after">
+                    <field name="electronic_monetary_product_id"
+                           string="Producto Monedero Electrónico"
+                           domain="[('sale_ok', '=', True)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
